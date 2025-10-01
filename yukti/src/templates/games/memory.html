@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Match - Learning Buddy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: transparent;
+        }
+        .memory-card.flipped {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        <h1>🎴 Memory Match Challenge</h1>
+        <div class="score-container">
+            <h2>Matches: <span id="score">0</span>/10</h2>
+        </div>
+        <div id="memory-grid" class="memory-grid"></div>
+    </div>
+    <script src="../js/memory.js"></script>
+</body>
+</html>

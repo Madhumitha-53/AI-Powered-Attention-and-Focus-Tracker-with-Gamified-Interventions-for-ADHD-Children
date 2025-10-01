@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Buddy</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        .game-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .game-button {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .game-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .status-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        .intervention-button {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        .intervention-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        #focus-score { font-size: 2em; color: #4CAF50; }
+        #session-duration { font-size: 2em; color: #2196F3; }
+        #intervention-count { font-size: 2em; color: #FF5722; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Learning Buddy 🌟</h1>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3>Focus Score</h3>
+                <p id="focus-score">0%</p>
+            </div>
+            <div class="stat-box">
+                <h3>Session Duration</h3>
+                <p id="session-duration">0:00</p>
+            </div>
+            <div class="stat-box">
+                <h3>Interventions</h3>
+                <p id="intervention-count">0</p>
+            </div>
+        </div>
+
+        <div class="game-buttons">
+            <a href="./games/memory.html" class="game-button" style="background: linear-gradient(45deg, #FF6B6B, #FF8E53)">
+                Memory Match 🎴
+                <p style="font-size: 0.8em">Test your memory skills!</p>
+            </a>
+            <a href="./games/math.html" class="game-button" style="background: linear-gradient(45deg, #4CAF50, #8BC34A)">
+                Quick Math ➗
+                <p style="font-size: 0.8em">Solve math puzzles!</p>
+            </a>
+            <a href="./games/word.html" class="game-button" style="background: linear-gradient(45deg, #2196F3, #03A9F4)">
+                Word Hunt 📝
+                <p style="font-size: 0.8em">Find hidden words!</p>
+            </a>
+            <a href="./games/breathing.html" class="game-button" style="background: linear-gradient(45deg, #9C27B0, #E91E63)">
+                Breathing Buddy 🫁
+                <p style="font-size: 0.8em">Relaxation exercises</p>
+            </a>
+            <a href="./games/movement.html" class="game-button" style="background: linear-gradient(45deg, #FF9800, #FF5722)">
+                Movement Break 🏃
+                <p style="font-size: 0.8em">Get moving!</p>
+            </a>
+        </div>
+
+        <div id="status" class="status-box">
+            <h2>Current Status</h2>
+            <p>Attention State: <span id="attention-state">Loading...</span></p>
+            <p>Suggested Intervention: <span id="intervention">Loading...</span></p>
+            <button class="intervention-button" onclick="startIntervention()">Start Intervention</button>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>

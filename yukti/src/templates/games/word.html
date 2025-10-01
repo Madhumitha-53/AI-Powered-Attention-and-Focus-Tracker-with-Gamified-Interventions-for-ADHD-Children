@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Hunt - Learning Buddy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .word-container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .letter-cell {
+            background: linear-gradient(135deg, #2196F3, #03A9F4);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .letter-cell.selected {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            transform: scale(1.1);
+        }
+        .target-word {
+            font-size: 1.8em;
+            margin: 20px;
+            color: #333;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        <h1>📝 Word Hunt Challenge</h1>
+        <div class="word-container">
+            <div id="target-word" class="target-word">Find the word: ...</div>
+            <div id="word-grid" class="word-grid"></div>
+        </div>
+    </div>
+    <script src="../js/word.js"></script>
+</body>
+</html>

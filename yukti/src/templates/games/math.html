@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Math - Learning Buddy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .math-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .answer-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5em;
+            margin: 10px 0;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .timer {
+            font-size: 1.5em;
+            text-align: center;
+            color: #FF5722;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        <h1>➗ Quick Math Challenge</h1>
+        <div class="math-container">
+            <div class="timer">Time: <span id="timer">30</span>s</div>
+            <div id="question" class="question"></div>
+            <input type="number" id="answer" class="answer-input" placeholder="Enter your answer">
+            <button onclick="checkAnswer()" class="submit-btn">Submit Answer</button>
+        </div>
+    </div>
+    <script src="../js/math.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movement Break - Learning Buddy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .movement-container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .exercise-display {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .exercise-image {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF9800, #FF5722);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+        .timer-display {
+            font-size: 2em;
+            color: #FF5722;
+            margin: 20px;
+        }
+        .exercise-name {
+            font-size: 1.5em;
+            color: #333;
+            margin: 15px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #FF9800, #FF5722);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        <h1>🏃 Movement Break</h1>
+        <div class="movement-container">
+            <div class="exercise-display">
+                <div class="exercise-image" id="exercise-emoji"></div>
+                <div class="exercise-name" id="exercise-name">Ready to start!</div>
+                <div class="timer-display" id="timer">00:30</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress"></div>
+                </div>
+            </div>
+            <button onclick="startExercise()" class="intervention-button" id="start-button">Start Exercises</button>
+        </div>
+    </div>
+    <script src="../js/movement.js"></script>
+</body>
+</html>

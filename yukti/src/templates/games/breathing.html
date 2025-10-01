@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breathing Exercise - Learning Buddy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .breathing-container {
+            text-align: center;
+            padding: 40px;
+        }
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 30px auto;
+            background: linear-gradient(45deg, #9C27B0, #E91E63);
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+        .breathing-circle.inhale {
+            animation: breatheIn 4s forwards;
+        }
+        .breathing-circle.exhale {
+            animation: breatheOut 4s forwards;
+        }
+        @keyframes breatheIn {
+            from { transform: scale(1); }
+            to { transform: scale(1.5); }
+        }
+        @keyframes breatheOut {
+            from { transform: scale(1.5); }
+            to { transform: scale(1); }
+        }
+        .instruction {
+            font-size: 1.5em;
+            margin: 20px;
+            color: #333;
+        }
+        .progress {
+            font-size: 1.2em;
+            color: #666;
+            margin: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background: linear-gradient(45deg, #2196F3, #03A9F4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to Home</a>
+        <h1>🫁 Breathing Exercise</h1>
+        <div class="breathing-container">
+            <p class="instruction" id="instruction">Click the circle to start</p>
+            <div class="breathing-circle" id="breathingCircle">
+                Start
+            </div>
+            <p class="progress" id="progress">Completed breaths: 0/5</p>
+        </div>
+    </div>
+    <script src="../js/breathing.js"></script>
+</body>
+</html>
